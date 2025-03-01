@@ -1,0 +1,218 @@
+:root {
+    --primary-bg: #0D0D0D;  /* Deep Dark */
+    --secondary-bg: #181818; /* Slightly Lighter Dark */
+    --accent-color: #3A82F7; /* Muted Blue */
+    --light-gray: #E5E5E5;  /* Light Gray for Text */
+    --border-color: #242424; /* Soft Border */
+    --correct-color: #1E8F4A; /* Softer Green */
+    --wrong-color: #C53030; /* Softer Red */
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--light-gray);
+}
+
+/* Container */
+.container1 {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Headings */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--light-gray);
+    margin-bottom: 15px;
+}
+
+/* Score Display */
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--light-gray);
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    background: var(--secondary-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.02);
+    transition: transform 0.2s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+}
+
+/* Buttons Grid */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #222222;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--light-gray);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+/* Button Hover - Subtle Highlight */
+.btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.03);
+    color: white;
+}
+
+/* Start, Next, and Restart Buttons */
+.start-btn, .next-btn, #restart-btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 18px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-btn:hover, .next-btn:hover, #restart-btn:hover {
+    background-color: #2B6CB0;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Controls */
+.controls {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hide Elements */
+.hide {
+    display: none !important;
+}
+
+/* Question Text */
+.question {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--light-gray);
+}
+
+/* Correct Answer Styling */
+.correct {
+    background-color: var(--correct-color) !important;
+    color: white !important;
+    border: 2px solid #176F3D;
+    pointer-events: none;
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.4);
+}
+
+/* Wrong Answer Styling */
+.wrong {
+    background-color: var(--wrong-color) !important;
+    color: white !important;
+    border: 2px solid #8C1F1F;
+    pointer-events: none;
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.3);
+}
+
+/* Keep hover effect for unselected buttons */
+.btn:not(.correct):not(.wrong):hover {
+    background-color: var(--accent-color);
+    transform: scale(1.03);
+    color: white;
+}
+
+/* Difficulty Container */
+#difficulty-container {
+    margin-top: 20px;
+}
+
+/* Question Container */
+#question-container {
+    margin-top: 30px;
+}
+
+/* Final Score Section */
+#final-score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.02);
+    animation: fade-in 0.4s ease-in-out;
+}
+
+/* Final Score Text */
+#final-score {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--light-gray);
+}
+
+/* Smooth Fade-in Effect */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .btn-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn, .start-btn, .next-btn, #restart-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+    }
+
+    .score {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
