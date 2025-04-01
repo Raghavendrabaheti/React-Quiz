@@ -1,7 +1,7 @@
 # React Quiz App
 
 This is a simple quiz application built with React. The app allows users to select a difficulty level and answer a series of questions. At the end of the quiz, the user's score is displayed.
-
+![Quiz App Screenshot](public/images/quiz.png)
 ## Project Structure
 
 The project is organized as follows:
