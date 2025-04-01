@@ -2,6 +2,10 @@
 
 This is a simple quiz application built with React. The app allows users to select a difficulty level and answer a series of questions. At the end of the quiz, the user's score is displayed.
 ![Quiz App Screenshot](quiz.png)
+![Quiz App Screenshot](quiz1.png)
+![Quiz App Screenshot](quiz2.png)
+![Quiz App Screenshot](quiz3.png)
+
 ## Project Structure
 
 The project is organized as follows:
