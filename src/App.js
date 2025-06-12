@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Quiz from './components/Quiz' ;
-import qdata from './components/question.json';
+import React, { useState } from 'react';
+import Quiz from './components/Quiz';
 import './App.css';
 
 function App() {
     const [isQuizStarted, setIsQuizStarted] = useState(false);
-    const [questions, setQuestions] = useState([]);
-
-    // useEffect(() => {
-    //     // fetch('./components/question.json')
-    //     //     .then(response => {
-    //     //         if (!response.ok) {
-    //     //             throw new Error(`HTTP error! status: ${response.status}`);
-    //     //         }
-    //     //         return response.json();
-    //     //     })
-    //     //     .then(data => setQuestions(data))
-    //     //     .catch(error => console.error("Error loading questions:", error));
-    //     let data = qdata;
-    //     setQuestions(data[difficulty] || []); 
-    // }, []);
 
     const startQuiz = () => {
         setIsQuizStarted(true);
@@ -32,12 +16,17 @@ function App() {
     return (
         <div className="App">
             {!isQuizStarted ? (
-                <div>
-                    <h1>DSA Quiz</h1>
-                    <button onClick={startQuiz}>Start Quiz</button>
+                <div className="welcome-container">
+                    <h1 className="quiz-title">DSA Quiz Master</h1>
+                    <p className="quiz-subtitle">
+                        Test your knowledge of Data Structures and Algorithms
+                    </p>
+                    <button onClick={startQuiz} className="start-btn">
+                        Start Quiz
+                    </button>
                 </div>
             ) : (
-                <Quiz questions={questions} onRestart={restartQuiz} />
+                <Quiz onRestart={restartQuiz} />
             )}
         </div>
     );
